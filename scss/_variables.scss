@@ -23,6 +23,19 @@ $enable-navbar:             false   !default; // 3K
 $enable-utilities-text:     false   !default; // 2K
 $enable-print:              false   !default; // 2K
 
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:              true !default;
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes:       $enable-grid !default;
+$enable-print-styles:       $enable-print !default;
+
 
 //
 // Color system
@@ -113,20 +126,6 @@ $yiq-contrasted-threshold:  150 !default;
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark:             $gray-900 !default;
 $yiq-text-light:            $white !default;
-
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
-
-$enable-caret:              true !default;
-$enable-rounded:            true !default;
-$enable-shadows:            false !default;
-$enable-gradients:          false !default;
-$enable-transitions:        true !default;
-$enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
-$enable-grid-classes:       true !default;
-$enable-print-styles:       true !default;
-
 
 // Spacing
 //
