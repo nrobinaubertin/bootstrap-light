@@ -45,7 +45,6 @@ twbsconfig.yml
 # Folders to ignore
 node_modules
 js/coverage
-dist/
 
 # exec
 .ash_history

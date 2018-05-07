@@ -1,8 +1,6 @@
 # Bootstrap-light
 _The most popular front-end framework in a lightweight form_
 
-## Work in progress, come back later.
-
 ### Why ?
 _We love bootstrap because :_
 - it's so well known
