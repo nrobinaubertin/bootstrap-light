@@ -52,14 +52,7 @@
 
     th,
     td {
-      border: $table-border-width solid $table-border-color;
-    }
-
-    thead {
-      th,
-      td {
-        border-bottom-width: (2 * $table-border-width);
-      }
+      border-bottom-width: 2 * $table-border-width;
     }
   }
 
@@ -101,9 +94,9 @@
   // Exact selectors below required to override `.table-striped` and prevent
   // inheritance to nested tables.
 
-  @each $color, $value in $theme-colors {
-    @include table-row-variant($color, theme-color-level($color, -9));
-  }
+@each $color, $value in $theme-colors {
+  @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+}
 
   @include table-row-variant(active, $table-active-bg);
 

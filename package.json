@@ -1,7 +1,7 @@
 {
     "name": "bootstrap-light",
     "description": "The most popular front-end framework in a lightweight form",
-    "version": "4.1.0",
+    "version": "4.2.1",
     "author": "Niels Robin-Aubertin",
     "scripts": {
         "css": "npm run css-compile && npm run css-minify",

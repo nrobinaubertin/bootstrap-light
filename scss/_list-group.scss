@@ -67,6 +67,7 @@
     &.disabled,
     &:disabled {
       color: $list-group-disabled-color;
+      pointer-events: none;
       background-color: $list-group-disabled-bg;
     }
 
@@ -90,6 +91,10 @@
       border-right: 0;
       border-left: 0;
       @include border-radius(0);
+
+      &:last-child {
+        margin-bottom: -$list-group-border-width;
+      }
     }
 
     &:first-child {
@@ -100,18 +105,19 @@
 
     &:last-child {
       .list-group-item:last-child {
+        margin-bottom: 0;
         border-bottom: 0;
       }
     }
-  }
 
 
-  // Contextual variants
-  //
-  // Add modifier classes to change text and background color on individual items.
-  // Organizationally, this must come after the `:hover` states.
+    // Contextual variants
+    //
+    // Add modifier classes to change text and background color on individual items.
+    // Organizationally, this must come after the `:hover` states.
 
-  @each $color, $value in $theme-colors {
-    @include list-group-item-variant($color, theme-color-level($color, -9), theme-color-level($color, 6));
+    @each $color, $value in $theme-colors {
+      @include list-group-item-variant($color, theme-color-level($color, -9), theme-color-level($color, 6));
+    }
   }
 }
