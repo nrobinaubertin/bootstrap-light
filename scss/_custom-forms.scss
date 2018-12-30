@@ -269,16 +269,6 @@
                   } @else {
                     box-shadow: $custom-select-focus-box-shadow;
                   }
-
-                  &::-ms-value {
-                    // For visual consistency with other platforms/browsers,
-                    // suppress the default white text on blue background highlight given to
-                    // the selected option text when the (still closed) <select> receives focus
-                    // in IE and (under certain conditions) Edge.
-                    // See https://github.com/twbs/bootstrap/issues/19398.
-                    color: $input-color;
-                    background-color: $input-bg;
-                  }
                 }
 
                 &[multiple],
@@ -291,11 +281,6 @@
                 &:disabled {
                   color: $custom-select-disabled-color;
                   background-color: $custom-select-disabled-bg;
-                }
-
-                // Hides the default caret in IE11
-                &::-ms-expand {
-                  opacity: 0;
                 }
               }
 
@@ -402,7 +387,6 @@
               // No box-shadow() mixin for focus accessibility.
               &::-webkit-slider-thumb { box-shadow: $custom-range-thumb-focus-box-shadow; }
               &::-moz-range-thumb     { box-shadow: $custom-range-thumb-focus-box-shadow; }
-              &::-ms-thumb            { box-shadow: $custom-range-thumb-focus-box-shadow; }
             }
 
             // Range
@@ -429,7 +413,6 @@
                 // No box-shadow() mixin for focus accessibility.
                 &::-webkit-slider-thumb { box-shadow: $custom-range-thumb-focus-box-shadow; }
                 &::-moz-range-thumb     { box-shadow: $custom-range-thumb-focus-box-shadow; }
-                &::-ms-thumb            { box-shadow: $custom-range-thumb-focus-box-shadow; }
               }
 
               &::-moz-focus-outer {
@@ -489,74 +472,30 @@
                 @include box-shadow($custom-range-track-box-shadow);
               }
 
-              &::-ms-thumb {
-                width: $custom-range-thumb-width;
-                height: $custom-range-thumb-height;
-                margin-top: 0; // Edge specific
-                margin-right: $custom-range-thumb-focus-box-shadow-width; // Workaround that overflowed box-shadow is hidden.
-                margin-left: $custom-range-thumb-focus-box-shadow-width;  // Workaround that overflowed box-shadow is hidden.
-                @include gradient-bg($custom-range-thumb-bg);
-                border: $custom-range-thumb-border;
-                @include border-radius($custom-range-thumb-border-radius);
-                @include box-shadow($custom-range-thumb-box-shadow);
-                @include transition($custom-forms-transition);
-                appearance: none;
+              &:disabled {
+                &::-webkit-slider-thumb {
+                  background-color: $custom-range-thumb-disabled-bg;
+                }
 
-                &:active {
-                  @include gradient-bg($custom-range-thumb-active-bg);
+                &::-webkit-slider-runnable-track {
+                  cursor: default;
+                }
+
+                &::-moz-range-thumb {
+                  background-color: $custom-range-thumb-disabled-bg;
+                }
+
+                &::-moz-range-track {
+                  cursor: default;
                 }
               }
-
-              &::-ms-track {
-                width: $custom-range-track-width;
-                height: $custom-range-track-height;
-                color: transparent;
-                cursor: $custom-range-track-cursor;
-                background-color: transparent;
-                border-color: transparent;
-                border-width: $custom-range-thumb-height / 2;
-                @include box-shadow($custom-range-track-box-shadow);
-              }
-
-              &::-ms-fill-lower {
-                background-color: $custom-range-track-bg;
-                @include border-radius($custom-range-track-border-radius);
-              }
-
-              &::-ms-fill-upper {
-                margin-right: 15px; // arbitrary?
-                background-color: $custom-range-track-bg;
-                @include border-radius($custom-range-track-border-radius);
-              }
             }
 
-            &:disabled {
-              &::-webkit-slider-thumb {
-                background-color: $custom-range-thumb-disabled-bg;
-              }
-
-              &::-webkit-slider-runnable-track {
-                cursor: default;
-              }
-
-              &::-moz-range-thumb {
-                background-color: $custom-range-thumb-disabled-bg;
-              }
-
-              &::-moz-range-track {
-                cursor: default;
-              }
-
-              &::-ms-thumb {
-                background-color: $custom-range-thumb-disabled-bg;
-              }
+            .custom-control-label::before,
+            .custom-file-label,
+            .custom-select {
+              @include transition($custom-forms-transition);
             }
-          }
-
-          .custom-control-label::before,
-          .custom-file-label,
-          .custom-select {
-            @include transition($custom-forms-transition);
           }
         }
       }

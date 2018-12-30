@@ -30,12 +30,6 @@
     @include box-shadow($input-box-shadow);
     @include transition($input-transition);
 
-    // Unstyle the caret on `<select>`s in IE10+.
-    &::-ms-expand {
-      background-color: transparent;
-      border: 0;
-    }
-
     // Customize the `:focus` state to imitate native WebKit styles.
     @include form-control-focus();
 
@@ -98,18 +92,6 @@
         background-color: $input-disabled-bg;
         // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
         opacity: 1;
-      }
-    }
-
-    select.form-control {
-      &:focus::-ms-value {
-        // Suppress the nested default white text on blue background highlight given to
-        // the selected option text when the (still closed) <select> receives focus
-        // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
-        // match the appearance of the native widget.
-        // See https://github.com/twbs/bootstrap/issues/19398.
-        color: $input-color;
-        background-color: $input-bg;
       }
     }
 

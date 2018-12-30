@@ -13,4 +13,6 @@ Is it possible ? **Bootstrap-light** is my take on it.
 ### What are the trade-offs ?
 I removed all javascript from the framework. That means that carousels, tooltips, dropdowns, modals and responsive navbars are not supported.  
 I then removed some less used features of bootstrap that you can reenable if you wish by modifying the variables.scss and compiling it again.  
+I removed support for IE/Edge since IE is getting really old and Edge is changing his rendering engine for blink.  
+
 The result is a lightweight bootstrap that comes at 7kb gzipped out of the box with a lot of features and all the testing and knowledge of the parent framework.

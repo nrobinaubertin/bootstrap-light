@@ -1,6 +1,7 @@
 # Folders to ignore
 node_modules
 .cache
+.npm
 
 # exec
 .ash_history
